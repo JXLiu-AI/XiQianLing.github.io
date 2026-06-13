@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Jiaxiang Liu</title>
-    
+
     <link rel="stylesheet" href="css/styles.css">
   </head>
 
@@ -11,45 +11,57 @@
     <div class="container">
 
       <div class="top_gutter"></div>
-      
+
       <div class="navbar">
     	<div class="name"><a href="index.html">JIAXIANG LIU</a></div>
     	<div class="research"><span class="active">RESEARCH</span></div>
     	<div class="publications"><a href="publications.html">PUBLICATIONS</a></div>
-    	
+
       </div>
-      
+
       <div class="content">
-	<div class="heading">AI for Health empowers researchers who are using artificial intelligence to advance the health of people</div>
-	
+	<div class="heading">trustworthy multimodal AI for medicine &mdash; reliable diagnosis, robust under attack, and grounded in clinical knowledge.</div>
+
 	<div class="main">
       	  <img src="img/research.svg">
-AI for health: In practice, medical images and text health records are used together to give diagnosis for patients. I'm interested in the development of efficient and hopefully explainable deep learning methods, which may involve with CV/NLP/Multi-modal models, to mimic and assist the this procedure. The following are relevant research experiences.
 
-<li> 
-Tooth Segmentation in CBCT Images <br> 
-In computer-assisted orthodontics, three-dimensional tooth models are required for many medical treatments. Tooth segmentation from CBCT images is a crucial step in constructing the models. We recognize the task as 2D semantic segmentation and propose an image-quality robust and teeth structure constrained segmentation method. We show that our method obtains better segmentation results on tooth datasets than the other six advanced medical image segmentation methods.
-(Accepted in Publications[IEEE ISBI 2023])
-	</li>      
-		
-<li> 
-Transfer Learning for Medical Visual Question Answering <br> 
-Recent large-scale pretrained models, such as the CLIP, exhibit an impressive performance on zero-shot and few-shot tasks. We intend to develop methods to efficiently transfer the rich knowledge learned by such models to attain improvements in Medical Visual Question Answering tasks.
-(Submitted in Publications[IEEE TETCI 2023])
-	</li>     
-<li>
-Explainable Zero-shot Medical Image Diagnosis with VLMs and LLMs <br> 
-Zero-shot medical image classification is a critical process in real-world scenarios where we have limited access to all possible diseases or large-scale annotated data. Recent advances in pretrained VLMs have shown great performance on such tasks. We explore utilizing LLMs to leverage VLMs for diagnosis to a greater extent, and provide explainability of the diagnosis.
-(Submitted)
-</li> 
-	    </ol>
+	  My work centres on making vision-language models <b>actually deployable</b> for clinical use. In practice this requires three things at once: (i) the model must reason like a clinician, not pattern-match; (ii) it must hold up under adversarial or out-of-distribution inputs; and (iii) it should not depend on expensive labelled data for every new disease or hospital. Below is the research thread.
+
+	  <p>
+	    <b>1. Multi-Expert Chain-of-Thought Reasoning for Medical Diagnosis</b><br>
+	    Single-pass VLMs are easy to fool and hard to audit. We build hierarchical-expert reasoning frameworks that produce intermediate diagnostic evidence, so the final answer is both more accurate and explainable. <b>MedCoT</b> (EMNLP 2024 Oral) introduces a sparse mixture-of-experts hierarchy; a 256M-parameter MedCoT outperforms LLaVA-Med (7B) by 5%+. Follow-ups include <b>V2T-CoT</b> (MICCAI 2025), <b>IFCoT</b> (IEEE TCSVT 2026, IF 11.1), and <b>MedThink</b> (NAACL Findings 2025).
 	  </p>
-	  
+
+	  <p>
+	    <b>2. Adversarial Robustness of Vision-Language Models</b><br>
+	    Imperceptible perturbations can flip CLIP&#39;s prediction confidently &mdash; in medicine this is a safety problem. <b>SCC</b> (ICML 2026) is a retraining-free, inference-time defence that fights back via two self-checks: a soft text anchor and multi-view aggregation. SCC restores robust accuracy by 12&ndash;16 percentage points over prior test-time defences across 22 benchmarks and 5+ attack families, with negligible clean-accuracy loss. It plugs into CLIP, OpenCLIP, and BioMedCLIP. [<a href="https://arxiv.org/abs/2510.22785">PDF</a>] [<a href="https://github.com/JXLiu-AI/SCC">Code</a>]
+	  </p>
+
+	  <p>
+	    <b>3. Vision-Language Alignment for Zero-Shot Medical Diagnosis</b><br>
+	    Class-name proxies are too impoverished for medical concepts. We propose <i>multimodal proxy</i> mining: instead of using a single text embedding as the class representative, we learn richer proxies that bridge the vision-text modal gap.
+	    <b>KPL</b> (AAAI 2025 Oral) is fully training-free: it builds an LLM-generated knowledge-enhanced base, retrieves image-relevant descriptions, and uses Stable Greenkhorn to produce multimodal proxies. KPL improves zero-shot accuracy by up to +24.7 percentage points (avg) over vanilla CLIP across 5 medical datasets, and outperforms SoTA baselines such as InMaP and Hierarchical. <b>VPL</b> (EMNLP 2024 Findings) is the predecessor, recovering visual proxies via stable Sinkhorn iteration. [<a href="https://arxiv.org/abs/2501.11231">KPL PDF</a>] [<a href="https://aclanthology.org/2024.findings-emnlp.583/">VPL PDF</a>]
+	  </p>
+
+	  <p>
+	    <b>4. Brain-to-Visual Decoding</b><br>
+	    Extending the trustworthy-multimodal thread into neuroscience. <b>MindAdapter</b> (KDD 2026, AI4Sciences) is a parameter-efficient residual calibration module that adapts cross-subject brain-to-visual decoding models with only a few examples, addressing the chronic problem of per-subject distribution shift in fMRI/EEG decoding. [<a href="https://jxliu-ai.github.io/MindAdapter/">Project</a>]
+	  </p>
+
+	  <p>
+	    <b>5. Clinically Deployed Multimodal Fusion</b><br>
+	    Earlier work that I am proud has actually reached the clinic. Our <b>Cell Press Patterns</b> paper presents the first clinically applicable 3D fusion pipeline for crown-root-bone reconstruction from CBCT + intraoral mesh scans, reducing reconstruction time from 5&ndash;7 hours to 20&ndash;25 minutes (~15&times; speed-up) and now deployed in the Angelalign IRS clinical system. [<a href="https://www.cell.com/patterns/fulltext/S2666-3899(23)00194-0">PDF</a>] Related work on tooth segmentation (<b>ToothSegNet</b>, ISBI 2023; <b>TSNet</b>, MIDL 2023) underpins this pipeline.
+	  </p>
+
+	  <p>
+	    <b>Recognition.</b> National Postgraduate Scholarship; First Prize for Outstanding Practical Achievements (Zhejiang University); Excellent Practical Achievements (Zhejiang Province); Jiangsu Jicui Postgraduate Scholarship (4 yrs); Ni Jihong Prize. Reviewer for ICML (silver, 2026), NeurIPS, ICLR, KDD, CVPR, ECCV, MICCAI, AAAI, IEEE TCSVT, IEEE TIM.
+	  </p>
+
 	</div>
-	
+
     </div>
 
-    
-    
+
+
   </body>
 </html>
