@@ -67,7 +67,7 @@ a:hover { text-decoration: underline; }
 /* ------------------ Sidebar (sticky) ------------------ */
 .sidebar {
     position: sticky;
-    top: 90px;
+    top: 30px;
     align-self: start;
 }
 .author__avatar {
