@@ -71,9 +71,9 @@ a:hover { text-decoration: underline; }
     align-self: start;
 }
 .author__avatar {
-    width: 200px;
-    height: 240px;
-    border-radius: 12px;
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
     overflow: hidden;
     margin: 0 auto 16px;
     border: 1px solid #e0e0e0;
@@ -83,7 +83,7 @@ a:hover { text-decoration: underline; }
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 18%;
+    object-position: center 15%;
     display: block;
 }
 .author__name {
@@ -257,26 +257,6 @@ a:hover { text-decoration: underline; }
     font-size: 14.5px;
     margin-right: 4px;
 }
-.venue-chip {
-    display: inline-block;
-    padding: 2px 8px;
-    color: #fff;
-    font-weight: 700;
-    font-size: 12px;
-    letter-spacing: 0.4px;
-    border-radius: 4px;
-    margin-right: 8px;
-    vertical-align: 1px;
-    font-family: "Inter", sans-serif;
-}
-.venue-icml    { background: #1B49B1; }
-.venue-aaai    { background: #cc0033; }
-.venue-emnlp   { background: #b22222; }
-.venue-acl     { background: #b22222; }
-.venue-ieee    { background: #00629B; }
-.venue-neurips { background: #4a3a82; }
-.venue-kdd     { background: #e07b14; }
-.venue-cell    { background: #f04e23; }
 .pub-text {
     font-size: 14.5px;
     line-height: 1.6;
