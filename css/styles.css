@@ -147,3 +147,196 @@ p {
     display: inline-block;
     width: 200px;
 }
+
+/* ---------- Section headings ---------- */
+.section_title {
+    font-family: "DM Serif Display";
+    font-size: 22px;
+    line-height: 30px;
+    color: #0b23bf;
+    margin-top: 35px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #d8d8d8;
+    padding-bottom: 4px;
+}
+
+/* ---------- News list ---------- */
+.news_list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    max-height: 240px;
+    overflow-y: auto;
+    border-left: 2px solid #f0e6c8;
+    padding-left: 14px;
+}
+
+.news_list li {
+    display: grid;
+    grid-template-columns: 95px 1fr;
+    grid-gap: 12px;
+    padding: 4px 0;
+    line-height: 22px;
+    font-size: 15px;
+}
+
+.news_list .news_date {
+    color: #997C1D;
+    font-family: Raleway;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    padding-top: 2px;
+}
+
+/* ---------- Selected publications (al-folio-style cards) ---------- */
+.pub_list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 18px;
+    margin-top: 6px;
+}
+
+.pub_card {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-gap: 18px;
+    align-items: start;
+    padding: 10px 0;
+    border-bottom: 1px dashed #e3e3e3;
+}
+
+.pub_card:last-child {
+    border-bottom: none;
+}
+
+.pub_thumb {
+    width: 200px;
+    height: auto;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    background: #fafafa;
+}
+
+.pub_thumb img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 2px;
+}
+
+.pub_thumb_placeholder {
+    width: 200px;
+    height: 120px;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    background: #f6f4ec;
+    color: #997C1D;
+    font-family: "DM Serif Display";
+    font-size: 14px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.pub_meta {
+    line-height: 22px;
+    font-size: 15px;
+}
+
+.pub_title {
+    font-family: "DM Serif Display";
+    font-size: 17px;
+    line-height: 22px;
+    color: #0b23bf;
+    margin-bottom: 4px;
+}
+
+.pub_title a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.pub_title a:hover {
+    color: #997C1D;
+}
+
+.pub_authors {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+.pub_authors .me {
+    color: #0b23bf;
+    font-weight: 600;
+}
+
+.pub_venue {
+    font-size: 14px;
+    color: #444;
+    font-style: italic;
+    margin-bottom: 4px;
+}
+
+.pub_venue .badge {
+    font-style: normal;
+    background: #f9f0d3;
+    color: #997C1D;
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-family: Raleway;
+    font-size: 11px;
+    margin-left: 4px;
+    letter-spacing: 0.4px;
+}
+
+.pub_links {
+    font-size: 13px;
+    font-family: Raleway;
+    letter-spacing: 0.3px;
+}
+
+.pub_links a {
+    text-decoration: none;
+    color: #0b23bf;
+    margin-right: 10px;
+}
+
+.pub_links a:hover {
+    color: #997C1D;
+}
+
+/* ---------- Profile photo tweak ---------- */
+.main img.profile {
+    width: 33%;
+    shape-outside: rectangle();
+    float: right;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    border-radius: 4px;
+}
+
+/* ---------- Inline icon-style social links ---------- */
+.contact_inline {
+    font-family: Raleway;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+}
+
+@media (max-width: 600px) {
+    .pub_card {
+        grid-template-columns: 1fr;
+    }
+    .pub_thumb, .pub_thumb_placeholder {
+        width: 100%;
+    }
+    .news_list li {
+        grid-template-columns: 1fr;
+        grid-gap: 0;
+    }
+}
