@@ -311,14 +311,128 @@ p {
     color: #997C1D;
 }
 
-/* ---------- Profile photo tweak ---------- */
-.main img.profile {
-    width: 33%;
-    shape-outside: rectangle();
-    float: right;
-    padding-left: 20px;
-    padding-bottom: 10px;
+/* ---------- al-folio style hero ---------- */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 220px;
+    grid-gap: 30px;
+    align-items: start;
+    margin-bottom: 30px;
+}
+
+.hero_name {
+    font-family: "DM Serif Display";
+    font-size: 38px;
+    line-height: 44px;
+    color: #0b23bf;
+    margin: 0 0 8px 0;
+    font-weight: 400;
+}
+
+.hero_affil {
+    font-size: 15px;
+    line-height: 22px;
+    color: #333;
+    margin: 0;
+}
+
+.hero_affil .group {
+    color: #997C1D;
+}
+
+.hero_photo {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #e0e0e0;
+    display: block;
+}
+
+.hero_contact {
+    margin-top: 12px;
+    text-align: center;
+    font-family: Raleway;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    color: #555;
+}
+
+.hero_contact a {
+    color: #0b23bf;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.hero_contact a:hover {
+    color: #997C1D;
+}
+
+/* ---------- al-folio publication: venue badge + thumb ---------- */
+.pub_card {
+    grid-template-columns: 90px 180px 1fr;
+    grid-gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.pub_badge {
+    font-family: "DM Serif Display";
+    font-size: 13px;
+    line-height: 16px;
+    color: #997C1D;
+    background: #f9f0d3;
+    padding: 6px 8px;
     border-radius: 4px;
+    text-align: center;
+    width: 90px;
+    box-sizing: border-box;
+    align-self: start;
+}
+
+.pub_badge .year {
+    display: block;
+    font-family: Raleway;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    color: #555;
+    margin-top: 3px;
+}
+
+.pub_thumb {
+    width: 180px;
+}
+
+.pub_thumb_placeholder {
+    width: 180px;
+    height: 110px;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.selected_star {
+    color: #c0392b;
+    font-size: 13px;
+    margin-left: 6px;
+    vertical-align: middle;
+}
+
+@media (max-width: 700px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+    .hero_photo {
+        margin: 0 auto;
+    }
+    .hero_contact {
+        text-align: left;
+    }
+    .pub_card {
+        grid-template-columns: 1fr;
+    }
+    .pub_badge, .pub_thumb, .pub_thumb_placeholder {
+        width: 100%;
+    }
 }
 
 /* ---------- Inline icon-style social links ---------- */
