@@ -92,13 +92,6 @@ a:hover { text-decoration: underline; }
     margin: 0 0 4px;
     color: #1f1f1f;
 }
-.author__cn {
-    text-align: center;
-    font-family: "LXGW WenKai", "Newsreader", serif;
-    font-size: 16px;
-    color: #92400e;
-    margin: 0 0 8px;
-}
 .author__bio {
     text-align: center;
     color: #666;
@@ -140,13 +133,6 @@ a:hover { text-decoration: underline; }
     margin: 0 0 8px;
     line-height: 1.2;
 }
-.page__title .cn {
-    font-family: "LXGW WenKai", "Newsreader", serif;
-    font-size: 24px;
-    color: #92400e;
-    margin-left: 8px;
-}
-
 .article h3 {
     font-family: "Newsreader", serif;
     font-size: 22px;
