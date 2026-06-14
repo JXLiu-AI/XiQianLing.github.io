@@ -233,13 +233,16 @@ a:hover { text-decoration: underline; }
 .publication-container img,
 .publication-container .pub-thumb-empty {
     width: 200px;
-    height: auto;
+    height: 150px;
     border: 1px solid #e6e6e6;
     border-radius: 4px;
     display: block;
+    object-fit: contain;
+    background: #fafafa;
+    padding: 4px;
+    box-sizing: border-box;
 }
 .publication-container .pub-thumb-empty {
-    height: 110px;
     background: #f7ecff;
     color: #9D00FF;
     font-family: "Newsreader", serif;
