@@ -215,7 +215,7 @@ a:hover { text-decoration: underline; }
 }
 .publication-container {
     display: grid;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 220px 1fr;
     gap: 18px;
     align-items: start;
     margin: 14px 0;
@@ -232,14 +232,14 @@ a:hover { text-decoration: underline; }
 }
 .publication-container img,
 .publication-container .pub-thumb-empty {
-    width: 200px;
+    width: 220px;
     height: 150px;
     border: 1px solid #e6e6e6;
     border-radius: 4px;
     display: block;
-    object-fit: contain;
+    object-fit: cover;
+    object-position: center;
     background: #fafafa;
-    padding: 4px;
     box-sizing: border-box;
 }
 .publication-container .pub-thumb-empty {
